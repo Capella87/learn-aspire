@@ -93,10 +93,10 @@
         "editor.minimap.enabled": false,
 
         // Uncomment if you want to change the default font family to D2Coding
-        "editor.fontFamily": "D2Coding, Consolas, 'Courier New', monospace",
+        "editor.fontFamily": "D2Coding, 'Cascadia Code PL', 'Cascadia Code', Consolas, 'Courier New', monospace",
 
         // Uncomment if you want to use D2CodingLigature Nerd Font as the default terminal font
-        "terminal.integrated.fontFamily": "D2CodingLigature Nerd Font",
+        "terminal.integrated.fontFamily": "'Cascadia Code PL', 'Cascadia Code', D2CodingLigature Nerd Font",
 
         // Recommended settings for the explorer pane
         "explorer.sortOrder": "type",
@@ -113,5 +113,11 @@
   // Uncomment if you want to use bash in 'onCreateCommand' after the container is created
   "onCreateCommand": "/bin/bash ./.devcontainer/on-create.sh > ~/on-create.log",
 
-  "remoteUser": "vscode"
+  // Source: https://medium.com/@guillem.riera/making-visual-studio-code-devcontainer-work-properly-on-rootless-podman-8d9ddc368b30
+  "remoteUser": "vscode",
+  "containerUser": "vscode",
+  "runArgs": [
+    "--userns=keep-id:uid=1000,gid=1000"
+  ],
+  "updateRemoteUserUID": true
 }
