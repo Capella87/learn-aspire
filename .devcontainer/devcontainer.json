@@ -86,7 +86,10 @@
         "ms-dotnettools.csdevkit",
         "ms-vscode.PowerShell",
         "ms-vscode.vscode-node-azure-pack",
-        "VisualStudioExptTeam.vscodeintellicode"
+        "VisualStudioExptTeam.vscodeintellicode",
+
+        // Etc
+        "anbuselvanrocky.bootstrap5-vscode"
       ],
       "settings": {
         // Uncomment if you want to disable the minimap view
@@ -111,13 +114,5 @@
   },
 
   // Uncomment if you want to use bash in 'onCreateCommand' after the container is created
-  "onCreateCommand": "/bin/bash ./.devcontainer/on-create.sh > ~/on-create.log",
-
-  // Source: https://medium.com/@guillem.riera/making-visual-studio-code-devcontainer-work-properly-on-rootless-podman-8d9ddc368b30
-  "remoteUser": "vscode",
-  "containerUser": "vscode",
-  "runArgs": [
-    "--userns=keep-id:uid=1000,gid=1000"
-  ],
-  "updateRemoteUserUID": true
+  "onCreateCommand": "/bin/bash ./.devcontainer/on-create.sh > ~/on-create.log"
 }
