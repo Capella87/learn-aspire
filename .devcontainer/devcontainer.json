@@ -96,7 +96,7 @@
         "editor.minimap.enabled": false,
 
         // Uncomment if you want to change the default font family to D2Coding
-        "editor.fontFamily": "D2Coding, 'Cascadia Code PL', 'Cascadia Code', Consolas, 'Courier New', monospace",
+        "editor.fontFamily": "'Cascadia Code PL', D2Coding, 'Cascadia Code', Consolas, 'Courier New', monospace",
 
         // Uncomment if you want to use D2CodingLigature Nerd Font as the default terminal font
         "terminal.integrated.fontFamily": "'Cascadia Code PL', 'Cascadia Code', D2CodingLigature Nerd Font",
@@ -114,5 +114,6 @@
   },
 
   // Uncomment if you want to use bash in 'onCreateCommand' after the container is created
-  "onCreateCommand": "/bin/bash ./.devcontainer/on-create.sh > ~/on-create.log"
+  "onCreateCommand": "/bin/bash ./.devcontainer/on-create.sh > ~/on-create.log",
+  "remoteUser": "vscode"
 }
