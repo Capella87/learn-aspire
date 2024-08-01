@@ -36,6 +36,9 @@ indent_size = 2
 # C# files
 [*.cs]
 
+[*.{razor,cshtml,sln}]
+charset = utf-8-bom
+
 #### .NET Coding Conventions ####
 [*.{cs,vb}]
 

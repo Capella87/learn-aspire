@@ -3,7 +3,20 @@
   <PropertyGroup>
     <AssemblyName>AspireYouTubeSummariser.WebApp</AssemblyName>
     <RootNamespace>AspireYouTubeSummariser.WebApp</RootNamespace>
+    <JSInteropRoot>JSInterop/</JSInteropRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(JSInteropRoot)node_modules/**</DefaultItemExcludes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="$(JSInteropRoot)**" />
+    <None Remove="$(JSInteropRoot)**" />
+    <None Include="$(JSInteropRoot)**" Exclude="$(JSInteropRoot)node_modules/**" />
+  </ItemGroup>
+
+  <Target Name="PublishRunWebpack" AfterTargets="Build">
+    <Exec WorkingDirectory="$(JSInteropRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(JSInteropRoot)" Command="npm run build" />
+  </Target>
 
   <ItemGroup>
     <PackageReference Include="Aspire.StackExchange.Redis.OutputCaching" Version="$(AspireVersion)" />
